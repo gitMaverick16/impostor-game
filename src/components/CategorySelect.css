@@ -11,11 +11,11 @@
 .category-select h2 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
-  color: #333;
+  color: #FFFFFF;
 }
 
 .subtitle {
-  color: #666;
+  color: #C0C0D0;
   margin-bottom: 2rem;
   font-size: 1.1rem;
 }
@@ -30,8 +30,8 @@
 }
 
 .category-card {
-  background: white;
-  border: 3px solid #e0e0e0;
+  background: #2F2F4F;
+  border: 3px solid #3B3B4B;
   border-radius: 20px;
   padding: 2rem;
   cursor: pointer;
@@ -40,13 +40,14 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .category-card:hover {
-  border-color: #4a90e2;
+  border-color: #8A5BF0;
+  background: #3B3B4B;
   transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(74, 144, 226, 0.2);
+  box-shadow: 0 6px 20px rgba(138, 91, 240, 0.4);
 }
 
 .category-icon {
@@ -56,12 +57,12 @@
 .category-name {
   font-size: 1.3rem;
   font-weight: bold;
-  color: #333;
+  color: #FFFFFF;
 }
 
 .category-count {
   font-size: 0.9rem;
-  color: #666;
+  color: #C0C0D0;
 }
 
 @media (max-width: 600px) {

@@ -11,11 +11,11 @@
 .player-count-setup h2 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
-  color: #333;
+  color: #FFFFFF;
 }
 
 .subtitle {
-  color: #666;
+  color: #C0C0D0;
   margin-bottom: 2rem;
   font-size: 1.1rem;
 }
@@ -31,9 +31,9 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 3px solid #4a90e2;
-  background: white;
-  color: #4a90e2;
+  border: 3px solid #8A5BF0;
+  background: #3B3B4B;
+  color: #8A5BF0;
   font-size: 2rem;
   font-weight: bold;
   cursor: pointer;
@@ -44,21 +44,25 @@
 }
 
 .counter-btn:hover:not(:disabled) {
-  background: #4a90e2;
-  color: white;
+  background: #8A5BF0;
+  color: #FFFFFF;
   transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(138, 91, 240, 0.4);
 }
 
 .counter-btn:disabled {
   opacity: 0.3;
   cursor: not-allowed;
+  border-color: #2F2F4F;
+  color: #2F2F4F;
 }
 
 .counter-display {
   font-size: 4rem;
   font-weight: bold;
-  color: #4a90e2;
+  color: #8A5BF0;
   min-width: 100px;
+  text-shadow: 0 0 20px rgba(138, 91, 240, 0.5);
 }
 
 .confirm-btn {
@@ -66,19 +70,19 @@
   padding: 1rem 3rem;
   font-size: 1.2rem;
   font-weight: bold;
-  color: white;
-  background: #4a90e2;
+  color: #FFFFFF;
+  background: #8A5BF0;
   border: none;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+  box-shadow: 0 4px 15px rgba(138, 91, 240, 0.4);
 }
 
 .confirm-btn:hover {
-  background: #357abd;
+  background: #9A6BF5;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+  box-shadow: 0 6px 20px rgba(138, 91, 240, 0.5);
 }
 
 .confirm-btn:active {

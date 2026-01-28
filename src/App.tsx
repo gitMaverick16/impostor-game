@@ -1,4 +1,5 @@
 import { useState } from "react";
+import MainMenu from "./components/MainMenu";
 import PlayerCountSetup from "./components/PlayerCountSetup";
 import CategorySelect from "./components/CategorySelect";
 import RevealScreen from "./components/RevealScreen";
@@ -7,13 +8,14 @@ import { getRandomWord } from "./data/words";
 import "./App.css";
 
 type GameState =
+  | "menu"
   | "playerCount"
   | "category"
   | "reveal"
   | "game";
 
 export default function App() {
-  const [gameState, setGameState] = useState<GameState>("playerCount");
+  const [gameState, setGameState] = useState<GameState>("menu");
   const [playerCount, setPlayerCount] = useState(0);
   const [category, setCategory] = useState("");
   const [secretWord, setSecretWord] = useState("");
@@ -47,7 +49,7 @@ export default function App() {
   };
 
   const handleRestart = () => {
-    setGameState("playerCount");
+    setGameState("menu");
     setPlayerCount(0);
     setCategory("");
     setSecretWord("");
@@ -55,8 +57,16 @@ export default function App() {
     setImpostorIndex(-1);
   };
 
+  const handleStartGame = () => {
+    setGameState("playerCount");
+  };
+
   return (
     <div className="app">
+      {gameState === "menu" && (
+        <MainMenu onStartGame={handleStartGame} />
+      )}
+
       {gameState === "playerCount" && (
         <PlayerCountSetup onConfirm={handlePlayerCountConfirm} />
       )}

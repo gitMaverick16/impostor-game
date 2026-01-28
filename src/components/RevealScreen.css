@@ -14,7 +14,7 @@
   top: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  color: #666;
+  color: #C0C0D0;
   font-size: 1rem;
   font-weight: 500;
 }
@@ -53,24 +53,26 @@
 
 .impostor-title {
   font-size: 2.5rem;
-  color: #e74c3c;
+  color: #FF6B6B;
   margin: 0;
   font-weight: bold;
+  text-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
 }
 
 .secret-word {
   font-size: 3.5rem;
-  color: #4a90e2;
+  color: #8A5BF0;
   margin: 0;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  text-shadow: 0 0 20px rgba(138, 91, 240, 0.5);
 }
 
 .impostor-message,
 .word-message {
   font-size: 1.2rem;
-  color: #666;
+  color: #C0C0D0;
   max-width: 500px;
   line-height: 1.6;
 }
@@ -80,19 +82,19 @@
   padding: 1rem 3rem;
   font-size: 1.2rem;
   font-weight: bold;
-  color: white;
-  background: #4a90e2;
+  color: #FFFFFF;
+  background: #8A5BF0;
   border: none;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+  box-shadow: 0 4px 15px rgba(138, 91, 240, 0.4);
 }
 
 .next-btn:hover {
-  background: #357abd;
+  background: #9A6BF5;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+  box-shadow: 0 6px 20px rgba(138, 91, 240, 0.5);
 }
 
 .next-btn:active {
