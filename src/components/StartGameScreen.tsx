@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./StartGameScreen.css";
 
 interface StartGameScreenProps {
@@ -11,6 +12,10 @@ export default function StartGameScreen({
   totalPlayers,
   onRestart,
 }: StartGameScreenProps) {
+  const [showWord, setShowWord] = useState(false);
+
+  const hiddenWord = secretWord.split("").map(() => "█").join("");
+
   return (
     <div className="start-game-screen">
       <h1>🎮 ¡Comienza el juego!</h1>
@@ -24,7 +29,9 @@ export default function StartGameScreen({
           </li>
           <li>
             Los jugadores reales conocen la palabra secreta:{" "}
-            <strong>{secretWord}</strong>
+            <strong className={showWord ? "" : "hidden-word-text"}>
+              {showWord ? secretWord : hiddenWord}
+            </strong>
           </li>
           <li>
             El impostor NO conoce la palabra y debe mezclarse sin delatarse
@@ -42,7 +49,14 @@ export default function StartGameScreen({
         </div>
         <div className="info-card">
           <div className="info-label">Palabra secreta</div>
-          <div className="info-value">{secretWord}</div>
+          <div className={`info-value ${showWord ? "" : "hidden-word-text"}`}>
+            {showWord ? secretWord : hiddenWord}
+          </div>
+          {!showWord && (
+            <button className="show-word-btn-small" onClick={() => setShowWord(true)}>
+              Mostrar palabra
+            </button>
+          )}
         </div>
       </div>
 
