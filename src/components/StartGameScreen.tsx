@@ -6,6 +6,7 @@ interface StartGameScreenProps {
   totalPlayers: number;
   playerNames: string[];
   onRestart: () => void;
+  onNewRound: () => void;
 }
 
 export default function StartGameScreen({
@@ -13,6 +14,7 @@ export default function StartGameScreen({
   totalPlayers,
   playerNames,
   onRestart,
+  onNewRound,
 }: StartGameScreenProps) {
   const [showWord, setShowWord] = useState(false);
 
@@ -69,9 +71,14 @@ export default function StartGameScreen({
         </div>
       </div>
 
-      <button className="restart-btn" onClick={onRestart}>
-        Nueva partida
-      </button>
+      <div className="action-buttons">
+        <button className="new-round-btn" onClick={onNewRound}>
+          Nueva ronda
+        </button>
+        <button className="restart-btn" onClick={onRestart}>
+          Nueva partida
+        </button>
+      </div>
     </div>
   );
 }

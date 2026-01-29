@@ -66,6 +66,15 @@ export default function App() {
     setImpostorIndex(-1);
   };
 
+  const handleNewRound = () => {
+    // Mantener los jugadores pero reiniciar la ronda
+    setCategory("");
+    setSecretWord("");
+    setCurrentPlayer(1);
+    setImpostorIndex(-1);
+    setGameState("category");
+  };
+
   const handleStartGame = () => {
     setGameState("playerCount");
   };
@@ -108,6 +117,7 @@ export default function App() {
           totalPlayers={playerCount}
           playerNames={playerNames}
           onRestart={handleRestart}
+          onNewRound={handleNewRound}
         />
       )}
     </div>

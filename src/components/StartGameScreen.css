@@ -128,8 +128,16 @@
   transform: translateY(0);
 }
 
-.restart-btn {
+.action-buttons {
+  display: flex;
+  gap: 1.5rem;
   margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.new-round-btn,
+.restart-btn {
   padding: 1rem 3rem;
   font-size: 1.2rem;
   font-weight: bold;
@@ -142,12 +150,18 @@
   box-shadow: 0 4px 15px rgba(138, 91, 240, 0.4);
 }
 
+.new-round-btn {
+  background: #6B4BC0;
+}
+
+.new-round-btn:hover,
 .restart-btn:hover {
   background: #9A6BF5;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(138, 91, 240, 0.5);
 }
 
+.new-round-btn:active,
 .restart-btn:active {
   transform: translateY(0);
 }
@@ -167,6 +181,16 @@
   }
 
   .info-card {
+    width: 100%;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .new-round-btn,
+  .restart-btn {
     width: 100%;
   }
 }
