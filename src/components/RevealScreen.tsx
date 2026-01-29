@@ -3,6 +3,7 @@ import "./RevealScreen.css";
 
 interface RevealScreenProps {
   playerNumber: number;
+  playerName: string;
   totalPlayers: number;
   isImpostor: boolean;
   secretWord: string;
@@ -11,6 +12,7 @@ interface RevealScreenProps {
 
 export default function RevealScreen({
   playerNumber,
+  playerName,
   totalPlayers,
   isImpostor,
   secretWord,
@@ -32,7 +34,7 @@ export default function RevealScreen({
   return (
     <div className="reveal-screen">
       <div className="player-indicator">
-        Jugador {playerNumber} de {totalPlayers}
+        {playerName} ({playerNumber} de {totalPlayers})
       </div>
 
       <div className={`reveal-content ${showContent ? "visible" : ""}`}>

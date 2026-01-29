@@ -4,12 +4,14 @@ import "./StartGameScreen.css";
 interface StartGameScreenProps {
   secretWord: string;
   totalPlayers: number;
+  playerNames: string[];
   onRestart: () => void;
 }
 
 export default function StartGameScreen({
   secretWord,
   totalPlayers,
+  playerNames,
   onRestart,
 }: StartGameScreenProps) {
   const [showWord, setShowWord] = useState(false);
@@ -46,6 +48,13 @@ export default function StartGameScreen({
         <div className="info-card">
           <div className="info-label">Jugadores</div>
           <div className="info-value">{totalPlayers}</div>
+          <div className="players-list">
+            {playerNames.map((name, index) => (
+              <div key={index} className="player-name-item">
+                {name}
+              </div>
+            ))}
+          </div>
         </div>
         <div className="info-card">
           <div className="info-label">Palabra secreta</div>

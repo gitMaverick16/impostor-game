@@ -1,0 +1,96 @@
+.player-names-setup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+.player-names-setup h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #FFFFFF;
+}
+
+.subtitle {
+  color: #C0C0D0;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.names-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 2rem 0;
+}
+
+.name-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.name-label {
+  color: #C0C0D0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+
+.name-input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  color: #FFFFFF;
+  background: #3B3B4B;
+  border: 2px solid #5A5A6B;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.name-input:focus {
+  border-color: #8A5BF0;
+  box-shadow: 0 0 15px rgba(138, 91, 240, 0.3);
+  background: #4B4B5B;
+}
+
+.name-input::placeholder {
+  color: #6A6A7B;
+}
+
+.confirm-btn {
+  margin-top: 2rem;
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #8A5BF0;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(138, 91, 240, 0.4);
+}
+
+.confirm-btn:hover:not(:disabled) {
+  background: #9A6BF5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(138, 91, 240, 0.5);
+}
+
+.confirm-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.confirm-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #5A5A6B;
+}

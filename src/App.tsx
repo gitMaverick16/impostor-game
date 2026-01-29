@@ -1,6 +1,7 @@
 import { useState } from "react";
 import MainMenu from "./components/MainMenu";
 import PlayerCountSetup from "./components/PlayerCountSetup";
+import PlayerNamesSetup from "./components/PlayerNamesSetup";
 import CategorySelect from "./components/CategorySelect";
 import RevealScreen from "./components/RevealScreen";
 import StartGameScreen from "./components/StartGameScreen";
@@ -10,6 +11,7 @@ import "./App.css";
 type GameState =
   | "menu"
   | "playerCount"
+  | "playerNames"
   | "category"
   | "reveal"
   | "game";
@@ -17,6 +19,7 @@ type GameState =
 export default function App() {
   const [gameState, setGameState] = useState<GameState>("menu");
   const [playerCount, setPlayerCount] = useState(0);
+  const [playerNames, setPlayerNames] = useState<string[]>([]);
   const [category, setCategory] = useState("");
   const [secretWord, setSecretWord] = useState("");
   const [currentPlayer, setCurrentPlayer] = useState(1);
@@ -24,6 +27,11 @@ export default function App() {
 
   const handlePlayerCountConfirm = (count: number) => {
     setPlayerCount(count);
+    setGameState("playerNames");
+  };
+
+  const handlePlayerNamesConfirm = (names: string[]) => {
+    setPlayerNames(names);
     setGameState("category");
   };
 
@@ -51,6 +59,7 @@ export default function App() {
   const handleRestart = () => {
     setGameState("menu");
     setPlayerCount(0);
+    setPlayerNames([]);
     setCategory("");
     setSecretWord("");
     setCurrentPlayer(1);
@@ -71,6 +80,13 @@ export default function App() {
         <PlayerCountSetup onConfirm={handlePlayerCountConfirm} />
       )}
 
+      {gameState === "playerNames" && (
+        <PlayerNamesSetup
+          playerCount={playerCount}
+          onConfirm={handlePlayerNamesConfirm}
+        />
+      )}
+
       {gameState === "category" && (
         <CategorySelect onSelect={handleCategorySelect} />
       )}
@@ -78,6 +94,7 @@ export default function App() {
       {gameState === "reveal" && (
         <RevealScreen
           playerNumber={currentPlayer}
+          playerName={playerNames[currentPlayer - 1] || `Jugador ${currentPlayer}`}
           totalPlayers={playerCount}
           isImpostor={currentPlayer === impostorIndex}
           secretWord={secretWord}
@@ -89,6 +106,7 @@ export default function App() {
         <StartGameScreen
           secretWord={secretWord}
           totalPlayers={playerCount}
+          playerNames={playerNames}
           onRestart={handleRestart}
         />
       )}

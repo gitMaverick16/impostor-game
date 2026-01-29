@@ -79,6 +79,25 @@
   color: #8A5BF0;
 }
 
+.players-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.player-name-item {
+  padding: 0.5rem 1rem;
+  background: #3B3B4B;
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-size: 1rem;
+  text-align: center;
+  border: 1px solid #4B4B5B;
+}
+
 .hidden-word-text {
   color: #4A4A5A;
   user-select: none;
