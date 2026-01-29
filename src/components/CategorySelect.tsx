@@ -23,6 +23,8 @@ export default function CategorySelect({ onSelect }: CategorySelectProps) {
               {category.name === "Famosos" && "⭐"}
               {category.name === "Lugares" && "🌍"}
               {category.name === "Fiesta" && "🎉"}
+              {category.name === "Jugadores de Fútbol" && "👟"}
+              {category.name === "Películas" && "🎬"}
             </div>
             <div className="category-name">{category.name}</div>
             <div className="category-count">{category.words.length} palabras</div>
