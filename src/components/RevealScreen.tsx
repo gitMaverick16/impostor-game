@@ -54,7 +54,7 @@ export default function RevealScreen({
               <>
                 <div className="word-icon">🔍</div>
                 <h1 className="secret-word hidden-word">
-                  {secretWord.split("").map(() => "█").join("")}
+                  {"█".repeat(5)}
                 </h1>
                 <button className="show-word-btn" onClick={() => setShowWord(true)}>
                   Mostrar palabra
@@ -66,7 +66,7 @@ export default function RevealScreen({
           <>
             <div className="word-icon">🔍</div>
             <h1 className={`secret-word ${showWord ? "" : "hidden-word"}`}>
-              {showWord ? secretWord : secretWord.split("").map(() => "█").join("")}
+              {showWord ? secretWord : "█".repeat(5)}
             </h1>
             {!showWord && (
               <button className="show-word-btn" onClick={() => setShowWord(true)}>

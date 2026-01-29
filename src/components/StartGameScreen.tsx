@@ -18,7 +18,7 @@ export default function StartGameScreen({
 }: StartGameScreenProps) {
   const [showWord, setShowWord] = useState(false);
 
-  const hiddenWord = secretWord.split("").map(() => "█").join("");
+  const hiddenWord = "█".repeat(5);
 
   return (
     <div className="start-game-screen">
